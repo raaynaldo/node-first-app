@@ -18,6 +18,17 @@ const freeMemeory = os.freemem();
 console.log(`Total Memory: ${totalMemory}`);
 console.log(`Free Memory: ${freeMemeory}`);
 
+// File System Module
+const fs = require('fs');
+
+// const files = fs.readdirSync('./');
+// console.log(files);
+
+fs.readdir('./', (err, files) => {
+  if (err) console.log('Error', err);
+  else console.log('Result', files);
+});
+
 // console.log(module);
 //module is not global object
 //every file is a module
