@@ -29,6 +29,21 @@ fs.readdir('./', (err, files) => {
   else console.log('Result', files);
 });
 
+// Event Module
+
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// Register a listener
+emitter.on('messageLogged', () => {
+  console.log('Listerner called');
+});
+
+// Raise an event
+emitter.emit('messageLogged');
+
+// Making a noise, produce - signalling
+
 // console.log(module);
 //module is not global object
 //every file is a module
