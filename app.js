@@ -3,10 +3,20 @@ const log = require('./logger');
 console.log(log);
 log('message');
 
+// Path Module
 const path = require('path');
 var pathObj = path.parse(__filename);
 
 console.log(pathObj);
+
+// OS Module
+const os = require('os');
+
+const totalMemory = os.totalmem();
+const freeMemeory = os.freemem();
+
+console.log(`Total Memory: ${totalMemory}`);
+console.log(`Free Memory: ${freeMemeory}`);
 
 // console.log(module);
 //module is not global object
