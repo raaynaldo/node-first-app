@@ -1,4 +1,9 @@
-console.log(module);
+const logger = require('./logger');
+
+console.log(logger);
+logger('message');
+
+// console.log(module);
 //module is not global object
 //every file is a module
 // Module {
