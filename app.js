@@ -46,7 +46,30 @@ logger.log('message');
 
 // Raise: loggin (data: message)
 
-// Making a noise, produce - signalling
+// emit : Making a noise, produce - signalling
+
+// HTTP Module
+
+const http = require('http');
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.write('Hello World');
+    res.end();
+  }
+
+  if (req.url === '/api/course') {
+    res.write(JSON.stringify([1, 2, 3]));
+    res.end();
+  }
+});
+
+server.on('connection', (socket) => {
+  console.log('New connection...');
+});
+
+server.listen(3000);
+
+console.log('Listening on port 3000...');
 
 // console.log(module);
 //module is not global object
